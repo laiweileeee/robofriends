@@ -4,6 +4,7 @@ import SearchBox from '../components/SearchBox';
 import Scroll from '../components/Scroll';
 import './App.css';
 
+
 class App extends Component {
     constructor() {
         super()
@@ -24,7 +25,7 @@ class App extends Component {
     }
 
     render() {
-        const {robots, searchField} = this.state;
+        const { robots, searchField } = this.state;
         const filteredRobots = robots.filter(robot => {
             return robot.name.toLowerCase().includes(searchField.toLowerCase());
         })
@@ -36,8 +37,8 @@ class App extends Component {
                 <div className="tc">
                     <h1 className="f1">RoboFrenz</h1>
                     <SearchBox searchChange={this.onSearchChange} />
-                    <Scroll>
-                        <CardList robots={filteredRobots} />
+                    <Scroll>      
+                            <CardList robots={filteredRobots} />                     
                     </Scroll>
                 </div>
             );
